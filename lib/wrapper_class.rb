@@ -14,4 +14,8 @@ class WrapperClass
   def another_call
     @obj.to_ss
   end
+
+  def make_me_a_damn_integer
+    @obj.to_i
+  end
 end

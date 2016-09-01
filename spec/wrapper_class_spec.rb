@@ -19,6 +19,15 @@ RSpec.describe WrapperClass do
     expect(obj).to have_received(:to_s)
   end
 
+  it "passes calls to to_i" do
+    obj = spy(:obj)
+    wrapper_class = WrapperClass.new(obj)
+
+    wrapper_class.make_me_a_damn_integer
+
+    expect(obj).to have_received(:to_i)
+  end
+
   it "srsly tho wtf" do
     obj = spy(:obj)
     wrapper_class = WrapperClass.new(obj)
