@@ -28,6 +28,24 @@ RSpec.describe WrapperClass do
     expect(obj).to have_received(:to_i)
   end
 
+  it "passes calls to inspect" do
+    obj = spy(:obj)
+    wrapper_class = WrapperClass.new(obj)
+
+    wrapper_class.inspector_gadget
+
+    expect(obj).to have_received(:inspect)
+  end
+
+  it "passes calls to display" do
+    obj = spy(:obj)
+    wrapper_class = WrapperClass.new(obj)
+
+    wrapper_class.super_display
+
+    expect(obj).to have_received(:display)
+  end
+
   it "srsly tho wtf" do
     obj = spy(:obj)
     wrapper_class = WrapperClass.new(obj)
